@@ -1,5 +1,5 @@
 import java.util.Scanner;
-import exception.*;
+// import java.lang.Exception;
 
 public class HandleRegistrationPage {
     public static void main(String[] args) {

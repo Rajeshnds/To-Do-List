@@ -12,7 +12,7 @@ public class HandleRegistrationPage {
             System.out.print("Enter Username (only letters and numbers, min 3 chars): ");
             String username = scanner.nextLine();
             try {
-                new UsernameException(username);
+                new UsernameException(username);  // Calls validation and throws if invalid
                 break; // Exit loop if input is valid
             } catch (Exception e) {
                 System.out.println("Error: " + e.getMessage());
@@ -24,7 +24,7 @@ public class HandleRegistrationPage {
             System.out.print("Enter Password (min 6 chars): ");
             String password = scanner.nextLine();
             try {
-                new PasswordException(password);
+                new PasswordException(password);  // Calls validation and throws if invalid
                 break; // Exit loop if input is valid
             } catch (Exception e) {
                 System.out.println("Error: " + e.getMessage());
@@ -36,7 +36,7 @@ public class HandleRegistrationPage {
             System.out.print("Enter Email: ");
             String email = scanner.nextLine();
             try {
-                new EmailException(email);
+                new EmailException(email);  // Calls validation and throws if invalid
                 break; // Exit loop if input is valid
             } catch (Exception e) {
                 System.out.println("Error: " + e.getMessage());
@@ -48,7 +48,7 @@ public class HandleRegistrationPage {
             System.out.print("Enter Mobile Number (10 digits): ");
             String mobileNumber = scanner.nextLine();
             try {
-                new MobileNumberException(mobileNumber);
+                new MobileNumberException(mobileNumber);  // Calls validation and throws if invalid
                 break; // Exit loop if input is valid
             } catch (Exception e) {
                 System.out.println("Error: " + e.getMessage());
@@ -60,7 +60,7 @@ public class HandleRegistrationPage {
             System.out.print("Enter Age (between 18 and 100): ");
             String age = scanner.nextLine();
             try {
-                new AgeOutOfRangeException(age);
+                new AgeOutOfRangeException(age);  // Calls validation and throws if invalid
                 break; // Exit loop if input is valid
             } catch (Exception e) {
                 System.out.println("Error: " + e.getMessage());

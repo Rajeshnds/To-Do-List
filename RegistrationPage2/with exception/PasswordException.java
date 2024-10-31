@@ -1,4 +1,4 @@
-package exception;
+// package exception;
 
 public class PasswordException extends Exception {
     private static final int MIN_PASSWORD_LENGTH = 6;

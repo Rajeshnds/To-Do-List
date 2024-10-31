@@ -1,4 +1,4 @@
-package exception;
+// package exception;
 
 public class AgeOutOfRangeException extends Exception {
     public AgeOutOfRangeException(String age) {

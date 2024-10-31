@@ -1,4 +1,4 @@
-package exception;
+// package exception;
 
 public class MobileNumberException extends Exception {
     public MobileNumberException(String mobileNumber) {
