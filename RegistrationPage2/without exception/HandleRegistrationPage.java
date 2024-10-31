@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import exception.*;
 
 public class HandleRegistrationPage {
     public static void main(String[] args) {
@@ -12,9 +11,9 @@ public class HandleRegistrationPage {
             System.out.print("Enter Username (only letters and numbers, min 3 chars): ");
             String username = scanner.nextLine();
             try {
-                new UsernameException(username);  // Calls validation and throws if invalid
+                UsernameException.validate(username); // Calls validation
                 break; // Exit loop if input is valid
-            } catch (Exception e) {
+            } catch (UsernameException e) {
                 System.out.println("Error: " + e.getMessage());
             }
         }
@@ -24,9 +23,9 @@ public class HandleRegistrationPage {
             System.out.print("Enter Password (min 6 chars): ");
             String password = scanner.nextLine();
             try {
-                new PasswordException(password);  // Calls validation and throws if invalid
+                PasswordException.validate(password); // Calls validation
                 break; // Exit loop if input is valid
-            } catch (Exception e) {
+            } catch (PasswordException e) {
                 System.out.println("Error: " + e.getMessage());
             }
         }
@@ -36,9 +35,9 @@ public class HandleRegistrationPage {
             System.out.print("Enter Email: ");
             String email = scanner.nextLine();
             try {
-                new EmailException(email);  // Calls validation and throws if invalid
+                EmailException.validate(email); // Calls validation
                 break; // Exit loop if input is valid
-            } catch (Exception e) {
+            } catch (EmailException e) {
                 System.out.println("Error: " + e.getMessage());
             }
         }
@@ -48,9 +47,9 @@ public class HandleRegistrationPage {
             System.out.print("Enter Mobile Number (10 digits): ");
             String mobileNumber = scanner.nextLine();
             try {
-                new MobileNumberException(mobileNumber);  // Calls validation and throws if invalid
+                MobileNumberException.validate(mobileNumber); // Calls validation
                 break; // Exit loop if input is valid
-            } catch (Exception e) {
+            } catch (MobileNumberException e) {
                 System.out.println("Error: " + e.getMessage());
             }
         }
@@ -60,13 +59,14 @@ public class HandleRegistrationPage {
             System.out.print("Enter Age (between 18 and 100): ");
             String age = scanner.nextLine();
             try {
-                new AgeOutOfRangeException(age);  // Calls validation and throws if invalid
+                AgeOutOfRangeException.validate(age); // Calls validation
                 break; // Exit loop if input is valid
-            } catch (Exception e) {
+            } catch (AgeOutOfRangeException e) {
                 System.out.println("Error: " + e.getMessage());
             }
         }
 
         System.out.println("Registration successful!");
+        scanner.close(); // Close the scanner
     }
 }
